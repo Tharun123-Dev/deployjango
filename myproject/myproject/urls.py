@@ -19,13 +19,15 @@ from django.urls import path
 from stringsapp.views import string
 from stringsapp.views import strings
 from stringsapp.views import queryper
+from django.urls import path, include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("info",string),
-     path("wel",strings),
-      path("query",queryper)
+    path("wel",strings),
+    path("query",queryper),
+    path('', include('accounts.urls')),
 
 
 
